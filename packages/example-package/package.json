@@ -1,0 +1,35 @@
+{
+  "name": "@monorepo-app-tony/example-package",
+  "private": true,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./src/index.ts",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "nanobundle build",
+    "clean": "nanobundle clean"
+  },
+  "devDependencies": {
+    "nanobundle": "^1.3.6",
+    "rimraf": "^4.1.1",
+    "typescript": "^4.9.4"
+  },
+  "publishConfig": {
+    "main": "./dist/index.mjs"
+  },
+  "ultra": {
+    "concurrent": [
+      "build"
+    ]
+  }
+}
